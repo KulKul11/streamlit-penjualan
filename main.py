@@ -67,7 +67,7 @@ st.markdown('<div class="chart"></div>', unsafe_allow_html=True)
 st.markdown('**Pie Chart**')
 fig_pie = px.pie(names=selected_dates, values=data.groupby('Date')['Quantity'].sum())
 fig_pie.update_layout(height=fig_size[1], width=fig_size[0])
-st.plotly_chart(fig_pie)
+st.plotly_chart(fig_pie, use_container_width=True)
 st.markdown('<div class "chart"></div>', unsafe_allow_html=True)
 
 # Doughnut Chart
@@ -75,7 +75,7 @@ st.markdown('**Doughnut Chart**')
 fig_doughnut = px.pie(names=selected_dates, values=data.groupby('Date')['Quantity'].sum())
 fig_doughnut.update_traces(hole=0.4)
 fig_doughnut.update_layout(height=fig_size[1], width=fig_size[0])
-st.plotly_chart(fig_doughnut)
+st.plotly_chart(fig_doughnut, use_container_width=True)
 st.markdown('<div class="chart"></div>', unsafe_allow_html=True)
 
 # Area Chart
